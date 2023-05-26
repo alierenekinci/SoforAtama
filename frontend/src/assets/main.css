@@ -1,35 +1,228 @@
-@import "./base.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-
-  font-weight: normal;
-}
-
-a,
-.green {
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafc;
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+h1{
+  font-size: 20px;
+}
+h2{
+  font-size: 19px;
+}
+h3{
+  font-size: 18px;
+}
+h4{
+  font-size: 17px;
+}
+h5{
+  font-size: 16px;
+}
+h6{
+  font-size: 14px;
+}
+p{
+  font-size: 14px;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+/* Button */
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+
+
+.btn {
+  color: #161612;
+  border: #161612 1px solid;
+  background-color: inherit;
+  padding: 7px 14px;
+  margin: 7px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 1000ms ease;
+  text-decoration: none;
+
+
+}
+
+.btn:hover {
+  background-color: #d4d4d4;
+  transition: all 1000ms ease;
+}
+
+.btn a{
+  color: #161612;
+  text-decoration: none;
+}
+
+.white {
+  color: #d4d4d4;
+  border: #d4d4d4 1px solid;
+}
+
+.white:hover{
+  color: #161612;
+  background-color: #d4d4d4;
+  transition: all 1000ms ease;
+}
+
+
+/* --Button */
+
+/* Navbar */
+.topnav {
+  overflow: hidden;
+  /* background-color: #161612; */
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #161612;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: all 1000ms ease-in-out;
+}
+
+.topnav:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  transition: all 1000ms ease-in-out;
+}
+.topnav a {
+  float: left;
+  color: #d4d4d4;
+  text-align: center;
+
+  padding: 14px 16px;
+  text-decoration: none;
+
+
+
+}
+
+.topnav a.active {
+  color: #f2f2f2;
+}
+
+.topnav a:hover{
+  color: #f2f2f2;
+}
+.topnav div.right {
+  float: right;
+}
+/* ---Navbar */
+
+.right{
+  float: right;
+}
+.left {
+  float: left;
+}
+
+/* Responsive */
+
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 7px;
+}
+
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+/* ---Responsive */
+
+hr.style{
+  border:0;
+  height: 1px;
+  background-image: linear-gradient(to right, #161612,#d4d4d4);
+
+}
+
+input[type=text], [type=number], select, textarea {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  width: 100%;
+  padding: 7px;
+  border: 1px solid #d4d4d4;
+  resize: vertical;
+  transition: all 1000ms ease-in-out;
+}
+
+input[type=text]:hover, [type=number]:hover, select:hover, textarea:hover {
+  border: 1px solid #161612;
+  transition: all 1000ms ease-in-out;
+}
+input[type=text]:active, [type=number]:active, select:active, textarea:active {
+  border: 1px solid #161612;
+  transition: all 1000ms ease-in-out;
+}
+
+
+.loader {
+  position: absolute;
+  border: 5px solid #d4d4d4; /* Light grey */
+  border-top: 5px solid #161612; /* Blue */
+  border-radius: 50%;
+  margin: -30px 0 0 -30px;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  animation: spin 400ms linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

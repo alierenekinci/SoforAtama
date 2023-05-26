@@ -1,47 +1,35 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <div class="topnav">
+        <div class="col-1 col-s-3"></div>
+        <div class="col-10 col-s-6">
+            <div class="left">
+                <router-link to="/"><font-awesome-icon icon="fa-solid fa-truck" /> Şoför Atama Paneli</router-link>
+            </div>
+            <div class="right">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+                <router-link to="/"><font-awesome-icon icon="fa-solid fa-list" /> Şoförler</router-link>
+                <router-link to="/kargo-ekle"><font-awesome-icon icon="fa-solid fa-plus" /> Kargo Ekle</router-link>
+
+                <router-link to="/kisiler"><font-awesome-icon icon="fa-solid fa-users" /> Kişiler</router-link>
+                <router-link to="/kisi-ekle"><font-awesome-icon icon="fa-solid fa-user-plus" /> Kişi Ekle</router-link>
+            </div>
+        </div>
+        <div class="col-1 col-s-3"></div>
+
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <router-view></router-view>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+/* br */
+br.space {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    color: inherit;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+/* --br */
 </style>
