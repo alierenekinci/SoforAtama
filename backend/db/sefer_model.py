@@ -8,5 +8,10 @@ class Sefer(db.Model):
     hat_id = db.Column(db.Integer, db.ForeignKey('hat.hat_id'))
     otobus_id = db.Column(db.Integer, db.ForeignKey('otobus.otobus_id'))
 
+    # sofor eklenecek
+    # Burada relationshipte eksik var.
+
+
+    # Gerekmiyor bile olabilir.
     hat = db.relationship('Hat', backref = 'seferler')
     #otobus = db.relationship(Otobus, backref = 'seferler')

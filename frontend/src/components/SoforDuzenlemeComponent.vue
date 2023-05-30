@@ -1,13 +1,10 @@
-<script setup lang="ts">
+<script setup>
 
 
-import {useCargoState} from "@/stores/cargo_state";
-import {usePersonState} from "@/stores/person_state";
+import {useDriverState} from "@/stores/driver_state";
 import {ref} from "vue";
 
-
-const cargoStore = useCargoState();
-const personStore = usePersonState();
+const driverStore = useDriverState();
 
 const duzenlenecek_kargo = ref({
     kargo_gonderici_id: "",
@@ -19,7 +16,8 @@ const duzenlenecek_kargo = ref({
 })
 
 function duzenle() {
-    cargoStore.kargoDuzenle(duzenlenecek_kargo.value, cargoStore.selectedCargo.kargo_id);
+
+    driverStore.editDriver(duzenlenecek_kargo.value, driverStore.selectedDriver.kargo_id);
     duzenlenecek_kargo.value = {
         kargo_gonderici_id: "",
         kargo_alici_id: "",

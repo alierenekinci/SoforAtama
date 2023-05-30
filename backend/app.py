@@ -2,6 +2,7 @@ import os
 
 from dotenv import load_dotenv
 from flask import Flask
+from flask_cors import CORS
 
 from api import api
 from db import *
@@ -17,6 +18,6 @@ ma.init_app(app)
 migrate.init_app(app, db)
 
 app.register_blueprint(api, url_prefix='/api')
-
+CORS(app)
 if __name__ == '__main__':
     app.run()
