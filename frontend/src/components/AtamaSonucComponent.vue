@@ -29,13 +29,20 @@ assignmentStore.yukle();
           <th>Şoför</th>
           <th>Gün</th>
           <th>Hat</th>
-          <th>Otobü</th>
+          <th>Otobüs</th>
+          <th>Sefer</th>
         </tr>
         <tr>
-          <td>1 id</td>
-          <td>2</td>
+          <td>1</td>
+          <td>Ali EHSEN</td>
+          <td>3. gün</td>
+          <td>203A</td>
+          <td>61NE153</td>
+          <td>10.30</td>
         </tr>
       </table>
+      <br class="space">
+      <br class="space">
       <br class="space">
 
 
