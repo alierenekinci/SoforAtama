@@ -1,6 +1,4 @@
-from urllib import request
-
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 
 from aracgerec.filtreleme import filtrele
 from db import db
@@ -11,7 +9,7 @@ def genel_endpoint_olustur(isim, db_sinifi, sema_sinifi):
 
     @bp.route('/', methods=['GET'])
     def listele():
-        kayitlar = filtrele(db_sinifi).all()
+        kayitlar = filtrele(db_sinifi).all() # Bu kısımda fazlalık var kontrol edilecek.
         sema = sema_sinifi()
         return sema.dump(kayitlar, many=True)
 

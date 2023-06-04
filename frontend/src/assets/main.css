@@ -8,7 +8,7 @@ body {
   padding: 0;
   background-color: #fafafc;
   text-decoration: none;
-}
+  overflow-y: scroll;}
 
 h1{
   font-size: 20px;
@@ -97,10 +97,8 @@ p{
   color: #d4d4d4;
   text-align: center;
 
-  padding: 14px 16px;
+    padding: 14px 16px;
   text-decoration: none;
-
-
 
 }
 
@@ -226,3 +224,29 @@ input[type=text]:active, [type=number]:active, select:active, textarea:active {
     transform: rotate(360deg);
   }
 }
+
+/* Table */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  /* border: 1px solid #d4d4d4; */
+}
+
+th {
+  background-color: #161612;
+  color: #f2f2f2;
+}
+
+th, td {
+
+  text-align: left;
+  padding: 16px;
+  transition: all 300ms ease-out;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+/* --Table */

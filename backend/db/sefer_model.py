@@ -7,11 +7,9 @@ class Sefer(db.Model):
     sefer_saat = db.Column(db.String(150))
     hat_id = db.Column(db.Integer, db.ForeignKey('hat.hat_id'))
     otobus_id = db.Column(db.Integer, db.ForeignKey('otobus.otobus_id'))
-
-    # sofor eklenecek
-    # Burada relationshipte eksik var.
+    sofor_id = db.Column(db.Integer, db.ForeignKey('sofor.sofor_id'))
 
 
-    # Gerekmiyor bile olabilir.
-    hat = db.relationship('Hat', backref = 'seferler')
-    #otobus = db.relationship(Otobus, backref = 'seferler')
+    # Gerekmiyormuş
+    # hat = db.relationship('Hat', backref = 'seferler')
+    # otobus = db.relationship(Otobus, backref = 'seferler')

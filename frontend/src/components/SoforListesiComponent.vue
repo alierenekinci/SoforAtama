@@ -11,7 +11,7 @@ driverStore.yukle();
 
 
 function deleteDriver(driver_id){
-    cargoStore.kargoSil(driver_id)
+    driverStore.deleteDriver(driver_id)
 }
 </script>
 
@@ -23,8 +23,6 @@ function deleteDriver(driver_id){
             <div class="col-12" v-else>
                 <h1>Şoförler</h1>
                 <hr class="style">
-
-
                 <table>
                     <tr>
                         <th> <font-awesome-icon icon="fa-solid fa-hashtag" /></th>
@@ -42,7 +40,7 @@ function deleteDriver(driver_id){
                         <td class="right">
                             <button class="btn" @click="driverStore.selectedDriver=driver" ><font-awesome-icon icon="fa-solid fa-pen-to-square" /> Düzenle</button>
                             /
-                            <button class="btn red" @click="deleteCargo(kargo)"><font-awesome-icon icon="fa-solid fa-trash" /> Sil</button>
+                            <button class="btn red" @click="deleteDriver(driver)"><font-awesome-icon icon="fa-solid fa-trash" /> Sil</button>
                         </td>
                     </tr>
                 </table>
@@ -57,41 +55,12 @@ function deleteDriver(driver_id){
         </div>
         <div class="col-1"></div>
     </div>
-    <!--- <SoforDuzenlemeComponent></SoforDuzenlemeComponent> -->
+    <SoforDuzenlemeComponent></SoforDuzenlemeComponent>
 
 
 
 </template>
 
 <style scoped>
-/* Table */
-
-
-
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    /* border: 1px solid #d4d4d4; */
-}
-
-th {
-    background-color: #161612;
-    color: #f2f2f2;
-}
-
-th, td {
-
-    text-align: left;
-    padding: 16px;
-    transition: all 300ms ease-out;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* ---Table */
 
 </style>

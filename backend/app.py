@@ -12,6 +12,7 @@ load_dotenv()
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DB_URL")
+app.config['SQLALCHEMY_ECHO'] = True
 
 db.init_app(app)
 ma.init_app(app)

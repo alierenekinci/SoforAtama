@@ -1,0 +1,10 @@
+Kısıtlar
+
+
+sonsuz döngü içerisinde
+
+if
+    sleep
+
+else
+    optimize()
