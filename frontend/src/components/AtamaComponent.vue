@@ -42,7 +42,7 @@ function  kaydet() {
   <div class="row">
       <div class="col-1"></div>
       <div class="col-10">
-        <div class="col-4">
+        <div class="col-3">
             <h1>Yeni Atama </h1>
             <hr class="style">
             <div class="row">
@@ -54,7 +54,7 @@ function  kaydet() {
                 <button class="btn" @click="kaydet"><font-awesome-icon icon="fa-solid fa-paper-plane" /> Atama Yap</button>
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-9">
             <h1>Son 5 istek</h1>
             <hr class="style">
             <table>

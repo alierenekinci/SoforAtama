@@ -23,22 +23,20 @@ assignmentStore.yukle();
 
       <table>
         <tr>
-          <th>
-            <font-awesome-icon icon="fa-solid fa-hashtag"/>
-          </th>
-          <th>Şoför</th>
+          <th>Şöför</th>
           <th>Gün</th>
-          <th>Hat</th>
           <th>Otobüs</th>
+          <th>Hat</th>
           <th>Sefer</th>
+
         </tr>
-        <tr>
-          <td>1</td>
-          <td>Ali EHSEN</td>
-          <td>3. gün</td>
-          <td>203A</td>
-          <td>61NE153</td>
-          <td>10.30</td>
+        <tr v-for="sonuc in JSON.parse(assignmentStore.selectedAssigment['atama_sonuc'])">
+          <td>{{ sonuc[0]["sofor"]}}</td>
+          <td>{{ sonuc[0]["gun"]}}</td>
+          <td>{{ sonuc[0]["otobus"]}}</td>
+          <td>{{ sonuc[0]["hat"]}}</td>
+          <td>{{ sonuc[0]["sefer"]}}</td>
+
         </tr>
       </table>
       <br class="space">
