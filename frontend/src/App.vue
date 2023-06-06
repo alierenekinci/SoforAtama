@@ -13,28 +13,28 @@
             <div class="right">
                 <router-link to="/"><font-awesome-icon icon="fa-solid fa-compass-drafting" /> Atama</router-link>
                 <div class="dropdown">
-                    <button class="dropbtn">Şoförler <font-awesome-icon icon="fa-solid fa-caret-down" /></button>
+                    <button class="dropbtn"><router-link to="/soforler">Şoförler <font-awesome-icon icon="fa-solid fa-caret-down" /></router-link></button>
                     <div class="dropdown-content">
                         <router-link to="/soforler"><font-awesome-icon icon="fa-solid fa-users" /> Şoför Listesi</router-link>
                         <router-link to="/soforekle"><font-awesome-icon icon="fa-solid fa-plus" /> Şoför Ekle</router-link>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropbtn">Otobüsler <font-awesome-icon icon="fa-solid fa-caret-down" /></button>
+                  <button class="dropbtn"><router-link to="/otobusler">Otobüsler <font-awesome-icon icon="fa-solid fa-caret-down" /></router-link></button>
                     <div class="dropdown-content">
                         <router-link to="/otobusler"><font-awesome-icon icon="fa-solid fa-bus"/> Otobüs Listesi</router-link>
                         <router-link to="/otobusekle"><font-awesome-icon icon="fa-solid fa-plus" /> Otobüs Ekle</router-link>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropbtn">Hatlar <font-awesome-icon icon="fa-solid fa-caret-down" /></button>
+                  <button class="dropbtn"><router-link to="/hatlar">Hatlar <font-awesome-icon icon="fa-solid fa-caret-down" /></router-link></button>
                     <div class="dropdown-content">
                         <router-link to="/hatlar"><font-awesome-icon icon="fa-solid fa-road"/> Hat Listesi</router-link>
                         <router-link to="/hatekle"><font-awesome-icon icon="fa-solid fa-plus" /> Hat Ekle</router-link>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropbtn">Seferler <font-awesome-icon icon="fa-solid fa-caret-down" /></button>
+                  <button class="dropbtn"><router-link to="/seferler">Seferler <font-awesome-icon icon="fa-solid fa-caret-down" /></router-link></button>
                     <div class="dropdown-content">
                         <router-link to="/seferler"><font-awesome-icon icon="fa-solid fa-map-signs"/> Sefer Listesi</router-link>
                         <router-link to="/seferekle"><font-awesome-icon icon="fa-solid fa-plus" /> Sefer Ekle</router-link>
@@ -75,7 +75,7 @@ br.space {
     border: none;
     outline: none;
     color: #d4d4d4;
-    padding: 14px 16px;
+
     background-color: inherit;
     cursor: pointer;
     transition: all 1000ms ease;
@@ -83,11 +83,7 @@ br.space {
     margin: 0; /* Important for vertical align on mobile phones */
 }
 
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-    color: #161612;
-    background-color: #f2f2f2;
-}
+
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {

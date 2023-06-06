@@ -71,7 +71,7 @@ function  kaydet() {
                     <td>{{atama.atama_tarih}}</td>
                     <td>{{atama.atama_durum == false ? 'İşlem daha devam ediyor.' : 'İşlem tamamladı.'}}</td>
                     <td class="right">
-                        <button class="btn" @click="assignmentStore.selectedAssigment = atama" v-if='atama.atama_durum==true'><font-awesome-icon icon="fa-solid fa-table-list" /> Göster</button>
+                        <button class="btn" @click="assignmentStore.selectedAssigmentDetail = null, assignmentStore.selectedAssigment = atama" v-if='atama.atama_durum==true'><font-awesome-icon icon="fa-solid fa-table-list" /> Göster</button>
                     </td>
                 </tr>
             </table>

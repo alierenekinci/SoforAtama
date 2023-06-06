@@ -3,7 +3,7 @@
 
 import {useDriverState} from "@/stores/driver_state";
 import {ref} from "vue";
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+
 
 const driverStore = useDriverState();
 

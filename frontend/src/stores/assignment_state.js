@@ -6,7 +6,8 @@ export const useAssigmentState = defineStore('assignment',
     {
         state: () => ({
             assigments : [],
-            selectedAssigment: null
+            selectedAssigment: null,
+            selectedAssigmentDetail: null
 
         }),
         actions: {
