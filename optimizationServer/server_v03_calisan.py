@@ -17,15 +17,14 @@ def request_get_data(api, tag):
     r = requests.get(api + tag, headers=headers)
     r.encoding = 'utf-8'
     return r.json()
+
+
 def engine_optimize(response):
     start = time.time()
     # Data.
 
     gun_y = response["atama_gun"]
-
-
     gun_sayisi_y = range(1, gun_y + 1)
-
 
     soforler = list(request_get_data(api_link, "sofor/"))
     otobusler = request_get_data(api_link, "otobus/")
@@ -34,29 +33,54 @@ def engine_optimize(response):
     atama = request_get_data(api_link, "atama/")
     print(soforler, otobusler, hatlar, seferler, atama, sep="\n\n")
 
-
     model = cp_model.CpModel()
 
     # Creates shift variables.
     X = {}
-
-
 
     for i in soforler:
         for j in otobusler:
             for y in gun_sayisi_y:
                 for k in hatlar:
                     for l in seferler:
-                        X[(i["sofor_id"], j["otobus_id"], y, k["hat_id"], l["sefer_id"])]\
+                        X[(i["sofor_id"], j["otobus_id"], y, k["hat_id"], l["sefer_id"])] \
                             = model.NewBoolVar('X_i%i-j%i-k%i-l%i-y%i' %
                                                (i["sofor_id"], j["otobus_id"], y, k["hat_id"], l["sefer_id"]))
 
+    #
     for y in gun_sayisi_y:
         for k in hatlar:
             for l in seferler:
                 model.Add(sum(X[(i["sofor_id"], j["otobus_id"], y, k["hat_id"], l["sefer_id"])]
                               for i in soforler for j in otobusler) == 1)
 
+    atanacak_sefer_sayisi = len(hatlar) * len(seferler) * gun_y
+
+    if atanacak_sefer_sayisi % len(soforler) == 0:
+        min_sofor_sefer_sayisi = atanacak_sefer_sayisi // len(soforler)
+        max_sofor_sefer_sayisi = atanacak_sefer_sayisi // len(soforler)
+    else:
+        min_sofor_sefer_sayisi = atanacak_sefer_sayisi // len(soforler)
+        max_sofor_sefer_sayisi = atanacak_sefer_sayisi // len(soforler) + 1
+
+    for i in soforler:
+        model.Add(sum(X[(i["sofor_id"], j["otobus_id"], y, k["hat_id"], l["sefer_id"])]
+                      for j in otobusler for y in gun_sayisi_y for k in hatlar for l in seferler) >= min_sofor_sefer_sayisi)
+        model.Add(sum(X[(i["sofor_id"], j["otobus_id"], y, k["hat_id"], l["sefer_id"])]
+                      for j in otobusler for y in gun_sayisi_y for k in hatlar for l in seferler) <= max_sofor_sefer_sayisi)
+
+    if atanacak_sefer_sayisi % len(otobusler) == 0:
+        min_otobus_sefer_sayisi = atanacak_sefer_sayisi // len(otobusler)
+        max_otobus_sefer_sayisi = atanacak_sefer_sayisi // len(otobusler)
+    else:
+        min_otobus_sefer_sayisi = atanacak_sefer_sayisi // len(otobusler)
+        max_otobus_sefer_sayisi = atanacak_sefer_sayisi // len(otobusler) + 1
+
+    for j in otobusler:
+        model.Add(sum(X[(i["sofor_id"], j["otobus_id"], y, k["hat_id"], l["sefer_id"])]
+                      for i in soforler for y in gun_sayisi_y for k in hatlar for l in seferler) >= min_otobus_sefer_sayisi)
+        model.Add(sum(X[(i["sofor_id"], j["otobus_id"], y, k["hat_id"], l["sefer_id"])]
+                      for i in soforler for y in gun_sayisi_y for k in hatlar for l in seferler) <= max_otobus_sefer_sayisi)
 
     # Creates the solver and solve.
     solver = cp_model.CpSolver()
@@ -103,7 +127,8 @@ def engine_optimize(response):
                                         'gun': y
                                     })
                                     is_working = True
-                                    print('    Şoför %i -> %i. otobüs, %i. hat, %i. sefer' % (i["sofor_id"], j["otobus_id"], k["hat_id"], l["sefer_id"]))
+                                    print('    Şoför %i -> %i. otobüs, %i. hat, %i. sefer' % (
+                                        i["sofor_id"], j["otobus_id"], k["hat_id"], l["sefer_id"]))
                     if not is_working:
                         print('    Şoför {} çalışmıyor.'.format(i["sofor_id"]))
 

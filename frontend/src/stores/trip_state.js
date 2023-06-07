@@ -26,10 +26,10 @@ export const useTripState = defineStore('trip',
                     this.yukle();
                 })
             },
-            searchTrip(id) {
+            searchTrip(id, toplam) {
                 for (let i = 0; i < this.trips.length; i++) {
                     if(this.trips[i].sefer_id === id){
-                        return this.trips[i].sefer_tarih + " " + this.trips[i].sefer_saat
+                        return this.trips[i].sefer_tarih + " " + this.trips[i].sefer_saat + "     +" + (toplam-1).toString()
                     }
 
                 }

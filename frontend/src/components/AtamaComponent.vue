@@ -55,7 +55,7 @@ function  kaydet() {
             </div>
         </div>
         <div class="col-9">
-            <h1>Son 5 istek</h1>
+            <h1>İstekler</h1>
             <hr class="style">
             <table>
                 <tr>
@@ -65,7 +65,7 @@ function  kaydet() {
                     <th>Durum</th>
                     <th><button class="btn white right" @click="assignmentStore.yukle()"><font-awesome-icon icon="fa-solid fa-arrows-rotate" /> Yenile</button></th>
                 </tr>
-                <tr v-for="atama in assignmentStore.assigments.reverse().slice(0,5)">
+                <tr v-for="atama in assignmentStore.assigments">
                     <td>{{atama.atama_id}}</td>
                     <td>{{atama.atama_gun}}</td>
                     <td>{{atama.atama_tarih}}</td>

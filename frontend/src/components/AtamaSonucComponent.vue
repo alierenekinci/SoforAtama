@@ -53,7 +53,7 @@ tripStore.yukle();
           <td>{{ assigment["gun"] }}</td>
           <td>{{ busStore.searchBus(assigment["otobus"]) }}</td>
           <td>{{ lineStore.searchLine(assigment["hat"]) }}</td>
-          <td>{{ tripStore.searchTrip(assigment["sefer"]) }}</td>
+          <td>{{ tripStore.searchTrip(assigment["sefer"], assigment["gun"])}}</td>
           {{ console.log(assigment) }}
         </tr>
       </table>
