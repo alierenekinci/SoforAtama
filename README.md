@@ -1,6 +1,17 @@
 # SoforAtama Driver Assignment Project
 
+![chrome_1ZO0ULQDM8](src/chrome_1ZO0ULQDM8.png)
+
+Bu proje Karadeniz Teknik Üniversitesi İstatistik Ve Bilgisayar Bilimleri 4. Sınıf Bitirme Tezi ve Seminer 1,2 dersleri kapsamında çalıştım.
+
 ![Project Summary](src/project-summary.png)
+
+## Katkı Sağlayanlar
+
+* Ali Eren Ekinci (Proje Sahibi)
+* Gülnur Ögür (Proje Sahibi)
+* Dr. Öğr. Üyesi Tolga Berber (Danışman)
+* Arş. Gör. Beyzanur Siyah (Danışman)
 
 ## Özet
 
@@ -10,16 +21,9 @@ Bu optimizasyon problemini Hedef Programlama tekniğini kullanarak Python ile Go
 
 ## Problem
 
-Bir atama probleminde işlerin makinelere dağıtımı, kişilerin işlere tayini, satış personelinin satış bölgelerine dağıtımı vb. yapılır. 
+Bir atama probleminde işlerin makinelere dağıtımı, kişilerin işlere tayini, satış personelinin satış bölgelerine dağıtımı vb. yapılır.
 
 Atama modeli aslında kaynakları işçiler, hedefleri de işler olan özel bir ulaştırma modelidir. Kaynakların sayısının hedeflerin sayısına eşit olması gerekir.
-
-## Çözüm
-
-Hedef programlama verilen kısıtlayıcılar altında amaç 
-ölçütünü doğrudan maksimum veya minimum kılmaktan ziyade hedeflerin kendi içindeki sapmaları minimum kılmaya odaklanan bir tekniktir.
-
- Atama problemleri için uygun bir yapısı vardır.
 
 ## Kurulum
 
@@ -32,16 +36,18 @@ Hedef programlama verilen kısıtlayıcılar altında amaç
 
 ### PostgreSQL sunucusunun kurulumu
 
-İlk olarak ana klasörde docker ile veritabanı sunucusunu kurabilmek adına docker ile kurunuz. 
+İlk olarak ana klasörde docker ile veritabanı sunucusunu kurabilmek adına docker ile kurunuz.
 
 ```bash
 docker-compose up -d
-```
+```  
 
 #### Pgadmin ile PostgreSQL tablolarını takip edebilirsiniz
 
 `docker-compose.yml` gözüktüğü gibi pgadmin için oluşturulan email `mail@pgadmin.com` ve şifre olarak ise `123456` oluşturuldu. [http://localhost:82](http://localhost:82) giderek giriş yapınız.
 
+Daha sora aşağıdaki fotografalara bakarak serveri ekleyebilirsiniz.
+  
 ![pgadmin server](src/pgadmin.png)
 
 ![pgadmin server](src/pgadmin2.png)
@@ -106,3 +112,7 @@ pip install -r requirements.txt
 ```bash
 python DriverAssignmentServer.py
 ```
+
+Vscode daki split özelliğini kullanarak başlatabilirsiniz.
+
+![Tüm Terminaller](src/Code_WMlmJdt4ic.png)
